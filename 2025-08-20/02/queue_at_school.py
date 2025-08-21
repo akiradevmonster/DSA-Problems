@@ -5,7 +5,8 @@ total_count = int(text[0])
 time = int(text[1])
 queue = list(input())
 
-for t in range(time):
+t = 0
+while t < time:
     i = 0
     while i < total_count - 1:
         if queue[i] == "B" and queue[i + 1] == "G":
@@ -13,5 +14,6 @@ for t in range(time):
             i += 2
         else:
             i += 1
+    t += 1
 
 print("".join(queue))
