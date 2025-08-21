@@ -3,11 +3,7 @@
 p = list(map(int, input().split(" ")))
 
 result = []
-
 for i in range(len(p)):
-    for j, val in enumerate(p):
-        if val == i + 1:
-            result.append(j + 1)
-            break
+    result.append(p.index(i + 1) + 1)
 
 print(" ".join(map(str, result)))
