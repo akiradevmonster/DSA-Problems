@@ -1,29 +1,20 @@
 """C. Cut and Count"""
 
-leng = int(input())
-text = input()
 
-counts = []
+def common_letters_count(left: str, right: str) -> int:
+    """Return the count of common letters between two strings."""
+    common_letters = set(left).intersection(set(right))
+    return len(common_letters)
 
-for x in range(1, leng):
-    left = text[0:x]
-    right = text[x:leng]
-    leftchar = []
-    rightchar = []
-    for s in left:
-        if not s in leftchar:
-            leftchar.append(s)
 
-    for s in right:
-        if not s in rightchar:
-            rightchar.append(s)
+tlength = int(input())
+text = input()[0:tlength]
 
-    # print(leftchar, rightchar)
-    sameLetterList = []
-    for s in leftchar:
-        if s in rightchar:
-            sameLetterList.append(s)
-    counts.append(len(sameLetterList))
+common_count = []
+for cut in range(1, tlength):
+    left_part = text[0:cut]
+    right_part = text[cut:tlength]
+    count = common_letters_count(left_part, right_part)
+    common_count.append(count)
 
-maxvalue = max(counts)
-print(maxvalue)
+print(max(common_count))
