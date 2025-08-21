@@ -12,15 +12,8 @@ totalArray = []
 for i in range(count):
     for j in range(i, count):
         realvalue = orgvalue.copy()
-        for x in range(i, j + 1):
-            realvalue[x] = 1 - realvalue[x]
-
-        totalCount = 0
-        for x in range(0, count):
-            if realvalue[x] == 1:
-                totalCount += 1
-        totalArray.append(totalCount)
-
+        realvalue[i:j] = [1 - x for x in realvalue[i:j]]
+        totalArray.append(realvalue.count(1))
 
 maxval = max(totalArray)
 print(maxval)
