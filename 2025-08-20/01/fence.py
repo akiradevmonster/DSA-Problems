@@ -1,12 +1,10 @@
 """B. Fence"""
 
-input1 = input()
-inputstr = input1.split(" ")
+inputstr = input().split(" ")
 planks = int(inputstr[0])
 width = int(inputstr[1])
 
-input2 = input()
-inputstr2 = input2.split(" ")
+inputstr2 = input().split(" ")
 heights = []
 for i in range(planks):
     heights.append(i)
@@ -15,11 +13,9 @@ for i in range(planks):
 totalsum = []
 index = []
 
+# Real calculatin section
 for x in range(planks - width):
-    temp = 0
-    for i in range(x, x + width):
-        temp += heights[i]
-
+    temp = sum(heights[x : x + width])
     totalsum.append(temp)
     index.append(x + 1)
 
