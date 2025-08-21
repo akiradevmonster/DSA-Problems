@@ -1,18 +1,21 @@
 """A. Team"""
 
-count = int(input())
-problem = []
 
-totalcount = 0
+def main():
+    """Main function to solve the Team problem."""
+    count = int(input())
 
-for index in range(count):
-    solution = input()
-    solutions = solution.split(" ")
-    result = 0
-    for sol in solutions:
-        if int(sol) == 1:
-            result += 1
-    if result >= 2:
-        totalcount += 1
+    total_count = 0
+    index = 0
+    while index < count:
+        solution = input()
+        result = solution.count("1")
+        if result >= 2:
+            total_count += 1
+        index += 1
 
-print(totalcount)
+    print(total_count)
+
+
+if __name__ == "__main__":
+    main()
