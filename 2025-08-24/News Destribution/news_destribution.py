@@ -1,7 +1,5 @@
 """Codeforces 1167C : News Distribution"""
 
-import sys
-
 
 def find(x):
     """Which connected component x belongs to"""
